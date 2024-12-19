@@ -10,7 +10,7 @@ namespace SalesWebMVC.Models
     {
         public int Id { get; set; }
 
-        [Range(1000,50000,ErrorMessage ="{0} must be from {1} to {2}")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage ="{0} size should be between {2} and {1} ")]
         [Required(ErrorMessage ="{0} Required")]
         public string Name { get; set; }
 
