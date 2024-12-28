@@ -72,8 +72,16 @@ namespace SalesWebMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            await _sellersService.RemoveAsync(id);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _sellersService.RemoveAsync(id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction(nameof(Error), new { message = ex.Message});
+            }
+
         }
 
         public async Task<IActionResult> Details(int? id)
