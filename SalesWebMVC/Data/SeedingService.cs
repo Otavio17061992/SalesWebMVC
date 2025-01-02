@@ -18,7 +18,7 @@ namespace SalesWebMVC.Data
         public void Seed()
         {
             if (_context.Department.Any() ||
-                _context.SalesRecords.Any() ||
+                _context.SalesRecord.Any() ||
                 _context.Seller.Any())
             {
                 return; // DB has been seeded
@@ -113,7 +113,7 @@ namespace SalesWebMVC.Data
 
             _context.Seller.AddRange(s1, s2, s3, s4);
 
-            _context.SalesRecords.AddRange(
+            _context.SalesRecord.AddRange(
                 r1, r2, r3, r4, r5, r6, r7, 
                 r8, r9, r10, r11, r12, r13,
                 r14, r15, r16, r17, r18, r19,
